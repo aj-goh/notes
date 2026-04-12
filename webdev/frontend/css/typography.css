@@ -1,0 +1,55 @@
+/* Font */
+p {
+    font-family: Georgia, 'Times New Roman', serif; /* fallback stack */
+
+    font-size: 16px;
+    font-size: 1rem;     /* relative to root font size (preferred) */
+    font-size: 1.25em;   /* relative to parent font size */
+
+    font-size: clamp(1.75rem, 5vw, 3rem);  /* min | preferred | max */
+
+    font-weight: 400;    /* 100-900, or thin | light | normal | bold | bolder */
+    font-style: normal;  /* normal | italic | oblique */
+    font-variant: small-caps;
+}
+
+/* Import web fonts */
+@font-face {
+    font-family: 'MyFont';
+    src: url('myfont.woff2') format('woff2'),
+         url('myfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Text */
+p {
+    color: #333;
+    
+    line-height: 1.6;
+    word-spacing: 0.1em;
+    letter-spacing: 0.05em;
+
+    text-align: left;         /* left | right | center | justify */
+    text-align-last: center;  /* alignment of last line in justified text */
+
+    text-transform: none;     /* none | uppercase | lowercase | capitalize */
+
+    text-decoration: none;                        /* remove underline (eg. on links) */
+    text-decoration: underline;
+    text-decoration: underline dashed red 2px;  /* style | pattern | colour | thickness */
+    text-underline-offset: 4px;                   /* gap between text and underline */
+
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);   /* x | y | blur | colour */
+}
+
+/* Lists */
+ul {
+    list-style: disc;             /* disc | circle | square | none */
+    list-style-image: url('bullet.png');
+    list-style-position: inside;  /* inside | outside */
+}
+
+ol {
+    list-style: decimal;          /* decimal | lower-alpha | upper-roman | etc. */
+}

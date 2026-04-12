@@ -1,0 +1,65 @@
+/*
+    Box model
+    Every element is a box: content > padding > border > margin
+*/
+div {
+    padding: 16px;
+    padding: 16px 24px;                /* vertical | horizontal */
+    padding: 8px 16px 24px;            /* top | horizontal | bottom */
+    padding: 8px 12px 16px 24px;       /* top | right | bottom | left */
+
+    border: 1px solid black;           /* width | style | colour */
+    border-style: solid;               /* solid | dashed | dotted | double | none */
+    border-radius: 8px;
+    border-radius: 4px 8px 12px 16px;  /* top-left | top-right | bottom-right | bottom-left */
+
+    margin: 16px;
+    margin: 0 auto;                    /* center horizontally */
+    margin-top: -8px;                  /* negative margins pull element */
+}
+
+/*
+    Box sizing
+
+    Content-box (default):
+    - width/height = content only
+    - total size   = content + padding + border
+    
+    Border-box (recommended):
+    - width/height = content + padding + border
+    - total size   = exactly what is set
+*/
+*, *::before, *::after {
+    box-sizing: border-box;  /* apply globally */
+}
+
+/* Sizing */
+div {
+    width: 200px;
+    width: 50%;            /* percentage of parent */
+    width: 50vw;           /* viewport width */
+    min-width: 100px;
+    max-width: 800px;
+
+    height: 50vh;          /* viewport height */
+    aspect-ratio: 16 / 9;  /* maintain aspect ratio */
+}
+
+/* Display */
+div {
+    display: block;   /* full width, stacks vertically */
+    display: inline;  /* width/height ignored, flows with text */
+    display: flex;    /* flex container */
+    display: grid;    /* grid container */
+    display: none;    /* hidden, removed from layout */
+}
+
+/* Overflow */
+div {
+    overflow: visible;  /* default, content spills out */
+    overflow: hidden;   /* clips overflowing content */
+    overflow: scroll;   /* always shows scrollbars */
+    overflow: auto;     /* scrollbars only when needed */
+    overflow-x: auto;
+    overflow-y: auto;
+}

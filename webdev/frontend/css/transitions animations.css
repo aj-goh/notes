@@ -1,0 +1,99 @@
+/* Transitions */
+button {
+    background: blue;
+
+    transition-property: background, transform;  /* which CSS property to transition */
+    transition-duration: 300ms, 200ms;           /* how long the transition takes */
+    transition-timing-function: ease;            /* easing curve */
+    transition-delay: 0ms, 50ms;                 /* delay before starting */
+
+    transition: background 300ms ease;                        /* property | duration | easing */
+    transition: background 300ms ease, transform 200ms ease;  /* multiple transitions */
+    transition: all 300ms ease;                               /* transition all properties (avoid - can be slow) */
+
+    /*
+        Easing functions:
+        - ease:        (default) slow start, fast middle, slow end
+        - linear:      constant speed
+        - ease-in:     slow start, fast end
+        - ease-out:    fast start, slow end
+        - ease-in-out: slow start, slow end
+    */
+}
+
+button:hover {
+    background: darkblue;
+    transform: scale(1.05);  /* transition applies on hover */
+}
+
+/* Animations */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes slide-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Apply animation */
+.card {
+    animation: fade-in 300ms ease forwards;  /* name | duration | easing | fill-mode */
+
+    animation-name: fade-in;
+    animation-duration: 300ms;
+    animation-delay: 100ms;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;            /* 1 | 2 | infinite */
+    animation-direction: normal;             /* normal | reverse | alternate | alternate-reverse */
+    animation-play-state: running;           /* running | paused */
+    animation-fill-mode: forwards;           /* what state to hold after animation */
+
+    /* Multiple animations */
+    animation: fade-in 300ms ease forwards, pulse 1s ease 300ms infinite;
+
+    /*
+        Fill modes
+        - none:      returns to original state before/after (default)
+        - forwards:  holds end state after animation finishes
+        - backwards: applies start state during delay period
+        - both:      forwards + backwards
+    */
+}
+
+/* Transformations */
+div {
+    /* 2D */
+    transform: translateX(20px);
+    transform: translateY(-10px);
+    transform: translate(20px, -10px);  /* x | y */
+    transform: scale(1.5);              /* uniform scale */
+    transform: scale(1.5, 0.8);         /* x | y */
+    transform: scaleX(1.5);
+    transform: scaleY(0.8);
+    transform: rotate(45deg);
+    transform: rotateX(45deg);          /* 3D rotation */
+    transform: rotateY(45deg);
+    transform: skew(10deg, 5deg);       /* x | y */
+    transform: skewX(10deg);
+
+    /* Chain multiple transforms (applied right to left) */
+    transform: translateY(-50%) rotate(45deg) scale(1.2);
+
+    /* 3D */
+    transform: perspective(500px) rotateY(30deg);
+    perspective: 500px;            /* apply to parent for consistent 3D scene */
+    transform-style: preserve-3d;  /* children participate in 3D space */
+    backface-visibility: hidden;   /* hide back face of rotated element */
+
+    /* Origin of transformation (default: center center) */
+    transform-origin: top left;
+    transform-origin: 50% 50%;
+}

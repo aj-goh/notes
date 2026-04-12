@@ -1,0 +1,47 @@
+/* Global variables */
+:root {
+    --string: "String";
+    --number: 3;
+    --percentage: 50%;
+    --pixels: 24px;
+    --colour: #f00;
+
+    --font: 'Inter';
+    --font-stack: 'Inter', system-ui, sans-serif;
+    --font-size-rem: 1.25rem;
+    --font-size-em: 1.5em;
+
+    --shadow: 0 1px 2px rgba(0,0,0,0.05);
+    --transition: 150ms ease;
+}
+
+/* Using variables */
+p {
+    color: var(--colour);
+    font-family: var(--font, --font-stack, monospace);       /* fallback chain */
+    font-size: calc(4 * var(--number) + var(--percentage));  /* calculation */
+
+    --pixels: 16px;  /* override variable in element scope */
+    margin: var(--pixels);
+}
+
+/* Dark mode using variables */
+:root {
+    --colour-bg: #fff;
+    --colour-text: #111;
+    --colour-surface: #f5f5f5;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --colour-bg: #111;
+        --colour-text: #f0f0f0;
+        --colour-surface: #1e1e1e;
+    }
+}
+
+/* Dark mode using attributes (control via JS) */
+[data-theme="dark"] {
+    --colour-bg: #111;
+    --colour-text: #f0f0f0;
+}

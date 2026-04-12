@@ -1,0 +1,90 @@
+/*
+    Pseudo-classes
+    Select elements based on state or position
+*/
+a:link                  { /* Unvisited link */ }
+a:visited               { /* Visited link */ }
+a:hover                 { /* Element on hover */ }
+a:active                { /* Element on click */ }
+
+input:focus             { /* Element has keyboard focus */ }
+input:checked           { /* Checkbox or radio is checked */ }         
+input:required          { }
+input:optional          { }
+input:valid             { }
+input:invalid           { }
+
+li:first-child          { }
+li:last-child           { }
+li:only-child           { }
+li:nth-child(2)         { }
+li:nth-child(odd)       { }
+li:nth-child(even)      { }
+li:nth-child(3n)        { /* Use n for more complex selection */ }
+li:nth-child(3n+1)      { /* 1st, 4th, 7th... */ }
+li:nth-last-child(2)    { /* 2nd from end */ }
+
+p:first-of-type         { /* First <p> among its siblings */ }
+p:last-of-type          { }
+p:nth-of-type(2)        { }
+p:only-of-type          { }
+
+div:not(.card)          { /* Does not match .card */ }
+div:not(.card, .panel)  { /* Does not match any */ }
+:is(h1, h2, h3)         { /* Matches any */ }
+:where(h1, h2, h3)      { /* Same as :is() but zero specificity */ }
+:has(img)               { /* Contains an <img> descendant */ }
+:has(+ .sibling)        { /* Immediately before .sibling */ }
+
+:root                   { /* Root element (<html>) - use for CSS variables */ }
+:empty                  { /* Element with no children */ }
+
+/*
+   Pseudo-elements
+   Style a specific part of an element
+*/
+.card::before {
+    content: '';  /* content required but can be empty */
+    display: block;
+}
+.required::after {
+    content: ' *';
+    color: red;
+}
+
+/* Content values */
+p::before { content: 'Note: '; }
+a::after  { content: ' (' attr(href) ')'; }  /* insert attribute value */
+li::before { content: counter(item) '. '; }  /* insert counter */
+div::before { content: url('icon.svg'); }    /* insert image */
+
+/* Text selection */
+::selection {
+    background: #005fcc;
+    color: white;
+}
+
+/* Placeholder text */
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* List markers */
+li::marker {
+    color: #005fcc;
+    font-size: 1.2em;
+}
+
+/* First letter */
+p::first-letter {
+    font-size: 2em;
+    float: left;
+    line-height: 1;
+    margin-right: 4px;
+}
+
+/* First line */
+p::first-line {
+    font-weight: bold;
+}

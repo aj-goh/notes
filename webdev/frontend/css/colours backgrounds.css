@@ -1,0 +1,86 @@
+/* Formats */
+div {
+    color: red;                    /* named colour */
+    color: #ff0000;                /* hex */
+    color: #f00;                   /* hex shorthand */
+    color: rgb(255 0 0);           /* rgb */
+    color: rgb(255 0 0 / 50%);     /* rgb + alpha */
+    color: hsl(0 100% 50%);        /* hsl */
+    color: hsl(0 100% 50% / 50%);  /* hsl + alpha */
+    color: transparent;
+    color: currentColor;
+}
+
+/* Backgrounds */
+div {
+    background-color: #f0f0f0;
+
+    background-image: url('image.jpg');
+    background-repeat: no-repeat;        /* repeat | repeat-x | repeat-y | no-repeat */
+    background-position: center center;  /* x y - keywords, %, or px */
+    background-size: cover;              /* cover | contain | auto | px/% */
+    background-attachment: fixed;        /* scroll | fixed | local */
+    background-origin: border-box;       /* border-box | padding-box | content-box */
+    background-clip: padding-box;        /* border-box | padding-box | content-box | text */
+
+    /* Shorthand: colour | image | repeat | position / size | attachment */
+    background: #f0f0f0 url('image.jpg') no-repeat center / cover;
+
+    /* Multiple backgrounds (layered, first = top) */
+    background:
+        url('overlay.png') no-repeat center,
+        url('background.jpg') no-repeat center / cover;
+}
+
+/* Gradients */
+div {
+    /* Linear gradient */
+    background: linear-gradient(#ff0000, #0000ff);  /* top to bottom */
+    background: linear-gradient(to right, #ff0000, #0000ff);
+    background: linear-gradient(45deg, #ff0000, #0000ff);
+    background: linear-gradient(45deg, #ff0000 25%, #00ff00 50%, #0000ff);  /* colour stops */
+
+    /* Radial gradient */
+    background: radial-gradient(circle, #ff0000, #0000ff);
+    background: radial-gradient(ellipse at top left, #ff0000, #0000ff);
+
+    /* Conic gradient */
+    background: conic-gradient(#ff0000, #ffff00, #00ff00, #0000ff, #ff0000);
+    background: conic-gradient(from 90deg, red 0%, blue 50%, red 100%);
+
+    /* Repeating gradients */
+    background: repeating-linear-gradient(45deg, #333 0px, #333 10px, #666 10px, #666 20px);
+}
+
+/* Blending */
+div {
+    opacity: 0.5;
+
+    mix-blend-mode: multiply;        /* how element blends with elements below */
+    background-blend-mode: overlay;  /* how background layers blend with each other */
+    /*
+        multiply | screen | overlay | darken | lighten |
+        color-dodge | color-burn | hard-light | soft-light |
+        difference | exclusion | hue | saturation | color | luminosity
+    */
+}
+
+/* Filters */
+img {
+    filter: blur(4px);
+    filter: brightness(1.5);  /* >1 = brighter, <1 = darker */
+    filter: contrast(1.2);
+    filter: grayscale(100%);
+    filter: sepia(80%);
+    filter: saturate(2);
+    filter: hue-rotate(90deg);
+    filter: invert(100%);
+    filter: opacity(50%);
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));  /* like box-shadow but respects transparency */
+
+    /* Combine filters */
+    filter: grayscale(50%) brightness(1.2);
+
+    /* Apply to elements behind (eg. frosted glass) */
+    backdrop-filter: blur(8px) brightness(0.9);
+}

@@ -1,0 +1,39 @@
+.flex-container {
+    display: flex;
+    display: inline-flex;  /* inline-level flex container */
+
+    flex-direction: row;   /* row (default) | row-reverse | column | column-reverse */
+    flex-wrap: nowrap;     /* nowrap (default) | wrap | wrap-reverse */
+    flex-flow: row wrap;   /* shorthand: direction | wrap */
+
+    /* Alignment on main axis (horizontal if row, vertical if column) */
+    /* flex-start | flex-end | center | space-between | space-around | space-evenly */
+    justify-content: flex-start;
+
+    /* Alignment on cross axis (vertical if row, horizontal if column) */
+    /* stretch (default) | flex-start | flex-end | center | baseline */
+    align-items: stretch;
+
+    /* Alignment of wrapped lines on cross axis */
+    /* normal | flex-start | flex-end | center | space-between | space-around | space-evenly | stretch */
+    align-content: normal;
+
+    gap: 16px;
+    gap: 16px 24px;
+    row-gap: 16px;
+    column-gap: 24px;
+}
+
+.flex-item {
+    flex-grow: 0;       /* how much item grows relative to others (default 0 = don't grow) */
+    flex-shrink: 1;     /* how much item shrinks relative to others (default 1 = can shrink) */
+    flex-basis: auto;   /* initial size before growing/shrinking */
+    flex: 1;            /* shorthand: grow | shrink | basis; flex: 1 = 1 1 0 */
+    flex: 0 0 200px;    /* fixed size, no grow or shrink */
+
+    align-self: auto;   /* override align-items for this item: auto | flex-start | flex-end | center | stretch | baseline */
+
+    order: 0;           /* visual order (default 0, lower = earlier) */
+
+    margin-left: auto;  /* push item (and everything after) to the right */
+}

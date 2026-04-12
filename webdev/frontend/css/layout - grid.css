@@ -1,0 +1,55 @@
+.grid-container {
+    display: grid;
+    display: inline-grid;  /* inline-level grid container */
+
+    /* Define columns */
+    grid-template-columns: 200px 1fr 2fr;                          /* fixed (px) vs flexible (fraction) */
+    grid-template-columns: repeat(3, 1fr);                         /* 3 equal columns */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));  /* responsive: fill with min 200px columns */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));   /* same, but collapses empty tracks */
+
+    /* Define rows */
+    grid-template-rows: auto 1fr auto;  /* header | main | footer */
+    grid-auto-rows: 100px;              /* size of implicitly created rows */
+    grid-auto-rows: minmax(100px, auto);
+
+    /* Named template areas */
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+
+    /* Alignment of all items within their cells */
+    /* stretch (default) | start | end | center */
+    justify-items: stretch;
+    align-items: stretch;
+
+    /* Alignment of the grid within the container */
+    /* start | end | center | space-between | space-around | space-evenly */
+    justify-content: start;
+    align-content: start;
+
+    gap: 16px;
+    gap: 16px 24px;
+    row-gap: 16px;
+    column-gap: 24px;
+}
+
+.grid-item {
+    /* Placement by line numbers (1-indexed, negative counts from end) */
+    grid-column: 1 / 3;       /* start-line / end-line */
+    grid-column: 1 / span 2;  /* start-line / span count */
+    grid-column: span 2;      /* span from current position */
+    grid-row: 1 / 2;
+
+    /* Placement by named areas */
+    grid-area: header;
+    grid-area: sidebar;
+    grid-area: main;
+    grid-area: footer;
+
+    /* Override alignment for this item */
+    /* start | end | center | stretch */
+    justify-self: center;
+    align-self: end;
+}

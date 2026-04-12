@@ -1,0 +1,39 @@
+/* Basic selectors */
+*                       { /* Universal: matches every element */ }
+div                     { /* Type: matches all <div> elements */ }
+.class                  { /* Class: matches elements with class="class" */ }
+#id                     { /* ID: matches element with id="id" */ }
+
+/* Combinators */
+div p                   { /* Descendant: <p> anywhere inside <div> */ }
+div > p                 { /* Child: <p> that is a direct child of <div> */ }
+div + p                 { /* Adjacent sibling: <p> immediately after <div> */ }
+div ~ p                 { /* General sibling: all <p> after <div> (same parent) */ }
+
+/* Attribute Selectors */
+[href]                  { /* Has attribute */ }
+[type="text"]           { /* Exact attribute value */ }
+[class~="card"]         { /* Value is in space-separated list */ }
+[lang|="en"]            { /* Value equals or starts with "en-" */ }
+[href^="https://"]      { /* Value starts with */ }
+[href$=".pdf"]          { /* Value ends with */ }
+[href*="example"]       { /* Value contains */ }
+[type="text" i]         { /* Case-insensitive match */ }
+
+/* Grouping */
+h1, h2, h3, h4, h5, h6  { /* Applies to all */ }
+
+/*
+   Specificity (highest to lowest):
+   1. Important rule                  !important
+   2. Inline styles                   style="..."
+   3. ID selectors                    #id
+   4. Class, attribute, pseudo-class  .class [attr] :no
+   5. Type, pseudo-element            div ::before
+   6. Universal selector              *
+
+   Higher specificity wins
+   Equal specificity => last rule wins
+*/
+div.card p              { /* Specificity: 0,1,2 (class + 2 types) - loses */ }
+#hero p                 { /* Specificity: 1,0,1 (ID + type) - wins */ }

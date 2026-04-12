@@ -1,0 +1,48 @@
+/* Viewport width/height */
+@media (max-width: 768px)                           { /* up to 768px (mobile-first: avoid this) */ }
+@media (min-width: 768px)                           { /* 768px and up (mobile-first: prefer this) */ }
+@media (min-width: 768px) and (max-width: 1024px)   { /* range */ }
+@media (min-height: 600px)                          { }
+
+@media (width >= 768px)                             { }
+@media (768px <= width <= 1024px)                   { }
+@media (height >= 800px)                            { }
+
+/* Hover capability */
+@media (hover: hover)                               { /* device supports hover (mouse/trackpad) */ }
+@media (hover: none)                                { /* touch-only device */ }
+@media (pointer: coarse)                            { /* touch screen */ }
+@media (pointer: fine)                              { /* mouse/stylus */ }
+
+/* Other options */
+@media (orientation: portrait)                      { /* portrait | landscape */ }
+@media (prefers-color-scheme: dark)                 { /* dark | light */ }
+@media (prefers-reduced-motion: reduce)             { /* reduce | no-preference */ }
+@media (prefers-contrast: more)                     { /* more | less */ }
+
+/* Combine with logical operators */
+@media (min-width: 768px) and (hover: hover)        { }
+@media (max-width: 480px), (orientation: portrait)  { /* comma = or */ }
+@media not (min-width: 768px) { }
+
+/* Common breakpoints */
+@media (min-width: 480px)                           { /* large phones */ }
+@media (min-width: 768px)                           { /* tablets */ }
+@media (min-width: 1024px)                          { /* small desktops */ }
+@media (min-width: 1280px)                          { /* large desktops */ }
+@media (min-width: 1536px)                          { /* wide screens */ }
+
+/*
+    Responsive units
+    - px:   pixels (device-independent)
+    - em:   relative to parent's font-size
+    - rem:  relative to root (html) font-size (preferred for spacing)
+    - ch:   width of the "0" character
+    - vw:   1% of viewport width
+    - vh:   1% of viewport height
+    - vmin: 1% of smaller viewport dimension
+    - vmax: 1% of larger viewport dimension
+    - svh:  small viewport height (excludes mobile browser chrome)
+    - dvh:  dynamic viewport height (adjusts for browser chrome)
+    - lvh:  large viewport height (ignores browser chrome)
+*/
