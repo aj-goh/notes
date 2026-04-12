@@ -1,0 +1,77 @@
+<!--
+    12-column grid system
+    Columns go inside rows, rows go inside containers
+
+    Breakpoints (min-width, applies at width and above):
+    - xs  <576px (no infix)
+    - sm  ≥576px
+    - md  ≥768px
+    - lg  ≥992px
+    - xl  ≥1200px
+    - xxl ≥1400px
+-->
+
+<!-- Containers -->
+<div class="container">Fixed-width (responsive max-widths per breakpoint)</div>
+<div class="container-fluid">Always 100% wide</div>
+<div class="container-md">100% below md, then fixed-width</div>
+
+<!-- Equal columns -->
+<div class="row">
+    <div class="col">Equal width</div>
+    <div class="col">Equal width</div>
+</div>
+
+<!-- Specific widths (must total 12) -->
+<div class="row">
+    <div class="col-4">4 cols</div>
+    <div class="col-8">8 cols</div>
+</div>
+
+<!-- Responsive -->
+<div class="row">
+    <div class="col-12 col-md-6 col-lg-4">Full → half → third</div>
+</div>
+
+<!-- Auto-width -->
+<div class="row">
+    <div class="col-auto">Fits content</div>
+    <div class="col">Fills rest</div>
+</div>
+
+<!-- Gutters (scale 0–5) -->
+<div class="row g-3">Horizontal + vertical gutter</div>
+<div class="row gx-3">Horizontal only</div>
+<div class="row gy-3">Vertical only</div>
+<div class="row g-0">No gutters</div>
+
+<!-- Offset -->
+<div class="row">
+    <div class="col-4 offset-4">Centred</div>
+</div>
+
+<!-- Ordering -->
+<div class="row">
+    <div class="col order-last">Visually last</div>
+    <div class="col order-first">Visually first</div>
+</div>
+
+<!-- Row-cols shorthand -->
+<div class="row row-cols-2">2 equal columns per row</div>
+<div class="row row-cols-md-3">3 columns per row on md+</div>
+
+<!-- Alignment -->
+<div class="row align-items-center">Vertical centre</div> <!-- start | center | end -->
+<div class="row justify-content-between">Horizontal spread</div>
+<!-- start | center | end | between | around | evenly -->
+<div class="col align-self-end">Align this column only</div> <!-- start | center | end -->
+
+<!-- Nesting -->
+<div class="row">
+    <div class="col-8">
+        <div class="row">
+            <div class="col-6">Nested</div>
+            <div class="col-6">Nested</div>
+        </div>
+    </div>
+</div>

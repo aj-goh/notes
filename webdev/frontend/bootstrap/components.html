@@ -1,0 +1,159 @@
+<!-- Alert  (colours: primary secondary success danger warning info light dark) -->
+<div class="alert alert-primary" role="alert">Alert</div>
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Heading</h4>
+    <p>Body with an <a href="#" class="alert-link">alert link</a>.</p>
+</div>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    Dismissible
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<!-- JS: bootstrap.Alert.getInstance(el).close() -->
+
+<!-- Badge -->
+<span class="badge bg-primary">Primary</span> <!-- bg-* for all colours -->
+<span class="badge rounded-pill bg-secondary">Pill</span>
+<button class="btn btn-primary">Inbox <span class="badge bg-dark">4</span></button>
+
+<!-- Buttons (colours: primary secondary success danger warning info light dark link) -->
+<button class="btn btn-primary">Filled</button>
+<button class="btn btn-outline-primary">Outline</button> <!-- btn-outline-* for all colours -->
+<button class="btn btn-primary btn-sm">Small</button> <!-- btn-lg -->
+<button class="btn btn-primary" disabled>Disabled</button>
+<button class="btn btn-primary active" aria-pressed="true">Active</button>
+<div class="d-grid"><button class="btn btn-primary">Full width</button></div>
+
+<div class="btn-group" role="group">
+    <button class="btn btn-primary">Left</button>
+    <button class="btn btn-primary">Middle</button>
+    <button class="btn btn-primary">Right</button>
+</div>
+
+<div class="btn-group" role="group">
+    <input type="checkbox" class="btn-check" id="chk1" autocomplete="off">
+    <label class="btn btn-outline-primary" for="chk1">Checkbox toggle</label>
+</div>
+
+<!-- Card -->
+<div class="card" style="width:18rem">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Subtitle</h6>
+        <p class="card-text">Body text.</p>
+        <a href="#" class="card-link">Link</a>
+        <a href="#" class="btn btn-primary">Button</a>
+    </div>
+    <div class="card-footer text-muted">Footer</div>
+</div>
+
+<div class="card"> <!-- card with header -->
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <p class="card-text">Body</p>
+    </div>
+</div>
+
+<div class="card mb-3"> <!-- horizontal card -->
+    <div class="row g-0">
+        <div class="col-md-4"><img src="..." class="img-fluid rounded-start" alt="..."></div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">Title</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card-group">
+    <div class="card">...</div>
+    <div class="card">...</div>
+</div>
+
+<!-- List group -->
+<ul class="list-group">
+    <li class="list-group-item active" aria-current="true">Active</li>
+    <li class="list-group-item">Item</li>
+    <li class="list-group-item disabled" aria-disabled="true">Disabled</li>
+    <li class="list-group-item list-group-item-primary">Contextual colour</li> <!-- -success -danger etc -->
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        With badge <span class="badge bg-primary rounded-pill">4</span>
+    </li>
+</ul>
+<!-- list-group-flush (no outer border) | list-group-numbered | list-group-horizontal(-{breakpoint}) -->
+
+<div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action active">Link item</a>
+    <button class="list-group-item list-group-item-action">Button item</button>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary"> <!-- expand: sm md lg xl xxl | data-bs-theme="dark" -->
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Brand</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                        aria-expanded="false">Dropdown</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Other</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<!-- fixed-top | fixed-bottom | sticky-top | sticky-bottom -->
+
+<!-- Breadcrumb -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb"> <!-- --bs-breadcrumb-divider: '>' for custom divider -->
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Current</li>
+    </ol>
+</nav>
+
+<!-- Pagination -->
+<nav aria-label="Pagination">
+    <ul class="pagination"> <!-- pagination-sm | pagination-lg | justify-content-center -->
+        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+        <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+        <li class="page-item disabled"><span class="page-link">2</span></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+</nav>
+
+<!-- Progress -->
+<div class="progress">
+    <div class="progress-bar" role="progressbar" style="width:25%" aria-valuenow="25" aria-valuemin="0"
+        aria-valuemax="100">25%</div>
+</div>
+<!-- progress-bar bg-success (any bg-*) | progress-bar-striped | progress-bar-animated -->
+<div class="progress"> <!-- multiple bars -->
+    <div class="progress-bar bg-success" style="width:40%"></div>
+    <div class="progress-bar bg-danger" style="width:20%"></div>
+</div>
+
+<!-- Spinners -->
+<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>
+<div class="spinner-grow" role="status"><span class="visually-hidden">Loading...</span></div>
+<!-- spinner-border-sm | spinner-grow-sm | text-primary (any text-*) -->
+<button class="btn btn-primary" disabled>
+    <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+    <span role="status">Loading...</span>
+</button>

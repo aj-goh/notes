@@ -1,0 +1,41 @@
+<!-- Images -->
+<img src="..." class="img-fluid" alt="..."> <!-- responsive, never exceeds natural size -->
+<img src="..." class="img-thumbnail" alt="..."> <!-- border + padding -->
+<img src="..." class="rounded" alt="..."> <!-- rounded-circle | rounded-pill -->
+<img src="..." class="float-start" alt="..."> <!-- float left -->
+<img src="..." class="float-end" alt="..."> <!-- float right -->
+<img src="..." class="d-block mx-auto" alt="..."> <!-- centred -->
+
+<figure class="figure">
+    <img src="..." class="figure-img img-fluid rounded" alt="...">
+    <figcaption class="figure-caption">Caption</figcaption>
+</figure>
+
+<!-- Tables -->
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Item</td>
+        </tr>
+        <tr class="table-primary">
+            <td colspan="2">Contextual row</td>
+        </tr> <!-- table-success -danger -warning etc -->
+    </tbody>
+</table>
+<!-- table-dark | table-striped | table-striped-columns | table-hover | table-bordered | table-borderless | table-sm -->
+<!-- table-active (active row) | combine freely: class="table table-dark table-striped table-hover" -->
+
+<caption>Table caption (below by default)</caption>
+<caption class="caption-top">Caption above</caption>
+
+<div class="table-responsive"> <!-- horizontal scroll on small screens -->
+    <table class="table">...</table>
+</div>
+<!-- table-responsive-md | -lg | -xl (responsive below that breakpoint) -->

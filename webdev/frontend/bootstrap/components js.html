@@ -1,0 +1,148 @@
+<!-- Dropdown -->
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">Dropdown</button>
+    <ul class="dropdown-menu"> <!-- dropdown-menu-end (right-align) | dropdown-menu-dark -->
+        <li>
+            <h6 class="dropdown-header">Header</h6>
+        </li>
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item active" href="#">Active</a></li>
+        <li><a class="dropdown-item disabled">Disabled</a></li>
+        <li>
+            <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="#">Separated</a></li>
+    </ul>
+</div>
+<!-- dropup | dropend | dropstart -->
+<!-- JS: new bootstrap.Dropdown(el).show() / .hide() / .toggle() -->
+
+<!-- Modal -->
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Open</button>
+
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog"> <!-- modal-sm | modal-lg | modal-xl | modal-fullscreen -->
+        <div class="modal-content"> <!-- modal-dialog-centered | modal-dialog-scrollable -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">Title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">Body</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- data-bs-backdrop="static" data-bs-keyboard="false" (prevent closing) -->
+<!-- JS: new bootstrap.Modal(el).show() / .hide() / .toggle() -->
+
+<!-- Accordion -->
+<div class="accordion" id="acc"> <!-- accordion-flush (no outer border) -->
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1"
+                aria-expanded="true" aria-controls="c1">Open by default</button>
+        </h2>
+        <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#acc">
+            <div class="accordion-body">Content</div> <!-- remove data-bs-parent to allow multiple open -->
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2"
+                aria-expanded="false" aria-controls="c2">Closed</button>
+        </h2>
+        <div id="c2" class="accordion-collapse collapse" data-bs-parent="#acc">
+            <div class="accordion-body">Content</div>
+        </div>
+    </div>
+</div>
+
+<!-- Collapse -->
+<button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#col">Toggle</button>
+<div class="collapse" id="col">Hidden by default</div>
+<div class="collapse show" id="col">Visible by default</div>
+<!-- JS: new bootstrap.Collapse(el).show() / .hide() / .toggle() -->
+
+<!-- Tabs -->
+<ul class="nav nav-tabs" role="tablist"> <!-- nav-pills for pill style -->
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#pane1" type="button" role="tab"
+            aria-selected="true">Tab 1</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#pane2" type="button" role="tab"
+            aria-selected="false">Tab 2</button>
+    </li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="pane1" role="tabpanel" tabindex="0">Content 1</div>
+    <div class="tab-pane fade" id="pane2" role="tabpanel" tabindex="0">Content 2</div>
+</div>
+<!-- JS: new bootstrap.Tab(el).show() -->
+
+<!-- Tooltip  (requires JS + manual init) -->
+<button data-bs-toggle="tooltip" data-bs-title="Tooltip text">Hover</button>
+<!-- data-bs-placement: top (default) bottom left right | data-bs-trigger: hover focus click -->
+<script>
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        .forEach(el => new bootstrap.Tooltip(el))
+</script>
+<!-- JS: tooltip.show() / .hide() / .toggle() / .setContent({'.tooltip-inner':'new'}) -->
+
+<!-- Popover  (requires JS + manual init) -->
+<button data-bs-toggle="popover" data-bs-title="Title" data-bs-content="Body">Click</button>
+<!-- data-bs-placement: right (default) top bottom left | data-bs-trigger: click hover focus -->
+<script>
+    document.querySelectorAll('[data-bs-toggle="popover"]')
+        .forEach(el => new bootstrap.Popover(el))
+</script>
+
+<!-- Toast -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="myToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <!-- data-bs-autohide="false" | data-bs-delay="3000" (ms, default 5000) -->
+        <div class="toast-header">
+            <strong class="me-auto">Title</strong>
+            <small>Just now</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">Message</div>
+    </div>
+</div>
+<script>new bootstrap.Toast(document.getElementById('myToast')).show()</script>
+
+<!-- Offcanvas -->
+<button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#oc">Open</button>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="oc" aria-labelledby="ocLabel">
+    <!-- offcanvas-start (left) | offcanvas-end | offcanvas-top | offcanvas-bottom -->
+    <!-- data-bs-backdrop="false" | data-bs-scroll="true" -->
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="ocLabel">Title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">Content</div>
+</div>
+<!-- JS: new bootstrap.Offcanvas(el).show() / .hide() / .toggle() -->
+
+
+<!-- Scrollspy -->
+
+<body data-bs-spy="scroll" data-bs-target="#spyNav" tabindex="0">
+    <nav id="spyNav">
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a class="nav-link" href="#s1">Section 1</a></li>
+            <li class="nav-item"><a class="nav-link" href="#s2">Section 2</a></li>
+        </ul>
+    </nav>
+    <div id="s1">
+        <h4>Section 1</h4>
+    </div>
+    <div id="s2">
+        <h4>Section 2</h4>
+    </div>
+</body>
+<!-- JS: new bootstrap.ScrollSpy(document.body, { target: '#spyNav' }) -->

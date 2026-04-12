@@ -1,0 +1,101 @@
+<!--
+    Utility pattern: {property}-{value} or {property}-{breakpoint}-{value}
+    Most utilities support breakpoint infixes: sm md lg xl xxl
+-->
+
+<!-- Display -->
+<div class="d-none">Hidden</div>
+<div class="d-block">Block</div>
+<div class="d-inline">Inline</div>
+<div class="d-inline-block">Inline block</div>
+<div class="d-flex">Flex</div>
+<div class="d-grid">Grid</div>
+<div class="d-none d-md-block">Hidden below md, block on md+</div>
+<div class="d-block d-md-none">Block below md, hidden on md+</div>
+<div class="d-print-none">Hidden when printing</div>
+
+<!-- Flexbox -->
+<div class="d-flex flex-row">Row (default)</div> <!-- flex-column | flex-row-reverse | flex-column-reverse -->
+<div class="d-flex flex-wrap">Wrap</div> <!-- flex-nowrap -->
+<div class="d-flex justify-content-center">Centre</div> <!-- start | end | between | around | evenly -->
+<div class="d-flex align-items-center">Cross-axis</div> <!-- start | end | stretch | baseline -->
+<div class="d-flex"><span class="align-self-end">Self</span></div>
+<div class="d-flex"><span class="flex-fill">Fill space</span></div>
+<div class="d-flex"><span class="flex-grow-1">Grow</span></div>
+<div class="d-flex"><span class="ms-auto">Push to end</span></div>
+
+<!-- Spacing  {m|p}{t|b|s|e|x|y|blank}-{0–5|auto} -->
+<div class="m-3">Margin all, size 3</div>
+<div class="mt-2 mb-4">Top 2, bottom 4</div>
+<div class="mx-auto">Horizontally centred</div>
+<div class="p-3">Padding all, size 3</div>
+<div class="px-4">Padding horizontal, size 4</div>
+<div class="mt-2 mt-md-4">Responsive margin</div>
+<div class="d-flex gap-3">Gap between flex items</div>
+
+<!-- Sizing -->
+<div class="w-50">50% width</div> <!-- w-25 | w-75 | w-100 | w-auto | mw-100 -->
+<div class="h-100">100% height</div> <!-- h-25 | h-50 | h-75 | h-auto | mh-100 -->
+<div class="vw-100">100vw</div>
+<div class="vh-100">100vh</div>
+<div class="min-vh-100">Min 100vh</div>
+
+<!-- Alignment -->
+<p class="text-center">Centre</p> <!-- text-start | text-end | text-md-center -->
+
+<!-- Font weight/style -->
+<p class="fw-bold">Bold</p> <!-- fw-semibold | fw-normal | fw-light -->
+<p class="fst-italic">Italic</p>
+
+<!-- Font size -->
+<p class="fs-1">Largest</p> <!-- fs-2 through fs-6 -->
+
+<!-- line height -->
+<p class="lh-lg">Large</p> <!-- lh-1 | lh-sm | lh-base -->
+
+<!-- Text decoration -->
+<p class="text-decoration-underline">Underline</p> <!-- text-decoration-line-through | text-decoration-none -->
+
+<!-- Text transform -->
+<p class="text-uppercase">UPPERCASE</p> <!-- text-lowercase | text-capitalize -->
+
+<!-- Text overflow -->
+<p class="text-truncate" style="max-width:200px">Truncate with ellipsis…</p>
+<p class="text-nowrap">No wrap</p>
+
+<!-- Colours -->
+<p class="text-primary">Primary text</p> <!-- secondary | success | danger | warning | info | muted | white | black -->
+<div class="bg-primary text-white">Primary bg</div>
+<div class="bg-primary-subtle text-primary-emphasis">Subtle bg (5.3+)</div>
+<div class="text-primary text-opacity-75">75% opacity text</div>
+<div class="bg-primary bg-opacity-50">50% opacity bg</div>
+
+<!-- Borders -->
+<div class="border">All borders</div>
+<div class="border-top">Top only</div> <!-- border-bottom | border-start | border-end | border-0 -->
+<div class="border border-primary">Coloured border</div>
+<div class="border border-3">Width 3</div> <!-- border-1 through border-5 -->
+<div class="rounded">Rounded</div> <!-- rounded-circle | rounded-pill | rounded-0 through rounded-5 -->
+
+<!-- Shadows -->
+<div class="shadow">Shadow</div> <!-- shadow-none | shadow-sm | shadow-lg -->
+
+<!-- Position -->
+<div class="position-relative">Relative</div> <!-- static | absolute | fixed | sticky -->
+<div class="position-absolute top-0 end-0">Top right</div>
+<div class="position-absolute top-50 start-50 translate-middle">Centred</div>
+<nav class="fixed-top">Fixed top</nav> <!-- fixed-bottom | sticky-top | sticky-bottom -->
+
+<!-- Overflow -->
+<div class="overflow-auto">Auto</div> <!-- overflow-hidden | overflow-scroll | overflow-x-auto | overflow-y-hidden -->
+
+<!-- Visibility -->
+<div class="visible">Visible (takes space)</div>
+<div class="invisible">Invisible (still takes space)</div>
+<span class="visually-hidden">Screen reader only</span>
+<span class="visually-hidden-focusable">Visible when focused (skip links)</span>
+
+<!-- Interactions -->
+<div class="user-select-none">Can't select text</div> <!-- user-select-all | user-select-auto -->
+<div class="pe-none">Not clickable</div> <!-- pe-auto -->
+<a class="stretched-link">Makes parent clickable (parent needs position-relative)</a>

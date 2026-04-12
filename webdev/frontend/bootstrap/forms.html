@@ -1,0 +1,94 @@
+<!-- Text inputs -->
+<div class="mb-3">
+    <label for="txt" class="form-label">Label</label>
+    <input type="text" class="form-control" id="txt" placeholder="Placeholder">
+    <div class="form-text">Helper text</div>
+</div>
+<!-- form-control-sm | form-control-lg -->
+<input type="text" class="form-control" value="Readonly" readonly>
+<input type="text" class="form-control-plaintext" value="Readonly plain (no border)" readonly>
+<input type="text" class="form-control" placeholder="Disabled" disabled>
+<textarea class="form-control" rows="3"></textarea>
+
+<!-- Dropdown -->
+<select class="form-select"> <!-- form-select-sm | form-select-lg | multiple -->
+    <option selected>Choose...</option>
+    <option value="1">Option 1</option>
+</select>
+
+<!-- Checkboxes -->
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" id="chk1" checked>
+    <label class="form-check-label" for="chk1">Checkbox</label>
+</div>
+<div class="form-check form-check-inline"> <!-- inline checkboxes -->
+    <input class="form-check-input" type="checkbox" id="chk2">
+    <label class="form-check-label" for="chk2">Inline</label>
+</div>
+<div class="form-check form-switch"> <!-- toggle switch -->
+    <input class="form-check-input" type="checkbox" role="switch" id="sw1">
+    <label class="form-check-label" for="sw1">Switch</label>
+</div>
+
+<!-- Radio buttons -->
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="radios" id="r1" checked>
+    <label class="form-check-label" for="r1">Radio</label>
+</div>
+
+<!-- Range slider -->
+<input type="range" class="form-range" min="0" max="100" step="5">
+
+<!-- Input group -->
+<div class="input-group mb-3">
+    <span class="input-group-text">@</span>
+    <input type="text" class="form-control" placeholder="Username">
+</div>
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Search">
+    <button class="btn btn-primary" type="button">Go</button>
+</div>
+<!-- input-group-sm | input-group-lg -->
+
+<!-- Floating labels -->
+<div class="form-floating mb-3">
+    <input type="email" class="form-control" id="fl1" placeholder="name@example.com">
+    <label for="fl1">Email address</label>
+</div>
+<div class="form-floating mb-3">
+    <textarea class="form-control" id="fl2" placeholder="Comment"></textarea>
+    <label for="fl2">Comment</label>
+</div>
+<div class="form-floating mb-3">
+    <select class="form-select" id="fl3">
+        <option selected>Choose...</option>
+    </select>
+    <label for="fl3">Select</label>
+</div>
+
+<!-- Validation -->
+<form class="was-validated"> <!-- add class after submit attempt -->
+    <div class="mb-3">
+        <label for="v1" class="form-label">Required field</label>
+        <input type="text" class="form-control" id="v1" required>
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">This field is required.</div>
+    </div>
+</form>
+<input type="text" class="form-control is-valid"> <!-- apply directly without was-validated -->
+<input type="text" class="form-control is-invalid">
+
+<script>                                         <!-- prevent default submit, add class via JS -->
+    document.querySelectorAll('.needs-validation').forEach(form => {
+        form.addEventListener('submit', e => {
+            if (!form.checkValidity()) { e.preventDefault(); e.stopPropagation() }
+            form.classList.add('was-validated')
+        })
+    })
+</script>
+
+<!-- Horizontal layout -->
+<div class="row mb-3">
+    <label for="hl" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10"><input type="email" class="form-control" id="hl"></div>
+</div>
